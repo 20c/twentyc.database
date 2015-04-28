@@ -1,9 +1,12 @@
 
 from setuptools import setup
 
+version = open('config/VERSION').read().strip()
+requirements = open('config/requirements.txt').read().split("\n")
+
 setup(
     name='twentyc.database',
-    version='0.1.1',
+    version=version,
     author='Twentieth Century',
     author_email='code@20c.com',
     description='database abstractions',
@@ -19,10 +22,8 @@ setup(
       'twentyc.database.couchbase'
     ],
     url = 'https://github.com/20c/twentyc.database',
-    download_url = 'https://github.com/20c/twentyc.database/tarball/0.1.0',
-    install_requires=[
-      "CouchDB==0.9"
-    ],
+    download_url = 'https://github.com/20c/twentyc.database/tarball/%s'%version,
+    install_requires=requirements,
     namespace_packages=['twentyc'],
     zip_safe=False
 )
