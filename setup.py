@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='twentyc.database',
-    version='0.1.0',
+    version='0.1.1',
     author='Twentieth Century',
     author_email='code@20c.com',
     description='database abstractions',
@@ -20,7 +20,9 @@ setup(
     ],
     url = 'https://github.com/20c/twentyc.database',
     download_url = 'https://github.com/20c/twentyc.database/tarball/0.1.0',
-    install_requires=open("requirements.txt").read().split("\n"),
+    install_requires=[
+      "CouchDB==0.9"
+    ],
     namespace_packages=['twentyc'],
     zip_safe=False
 )
