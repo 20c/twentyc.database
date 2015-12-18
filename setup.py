@@ -19,6 +19,7 @@ setup(
     packages=[
       'twentyc.database',
       'twentyc.database.couchdb',
+      'twentyc.database.dummydb',
       'twentyc.database.couchbase'
     ],
     url = 'https://github.com/20c/twentyc.database',

@@ -29,6 +29,9 @@ def Client(engine="couchbase", host="", auth="", database="", logger=None, verbo
     return CouchDBClient(
       host, database, auth=auth, logger=logger, verbose=verbose
     )
+  elif engine == "dummydb":
+    from twentyc.database.dummydb.client import DummyDBClient
+    return DummyDBClient()
   else:
     raise InvalidEngineException(engine)
 
@@ -70,6 +73,10 @@ def ClientFromConfig(engine, config, database, logger=None, verbose=True):
       database=config.get("db_%s" % database),
       logger=logger,
       verbose=verbose
+    )
+  elif engine == "dummydb":
+    return Client(
+      engine=engine
     )
   else:
     raise InvalidEngineException(engine)
