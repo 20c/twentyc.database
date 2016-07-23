@@ -1,1 +1,1 @@
-CouchDB==0.9
+CouchDB==1.0.1
